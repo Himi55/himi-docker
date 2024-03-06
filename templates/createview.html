@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+.contact-form-wrapper {
+  margin-top: 0px;
+}
+.contact-form {
+  margin-top:120px;
+  padding: 60px 40px;
+  background-color: #ffffff;
+  border-radius: 17px;
+  max-width: 600px;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form .form-input,
+.form-text-area {
+  background-color: #f0f4f5;
+  height: 40px;
+  padding-left: 26px;
+}
+
+.contact-form .form-text-area {
+  background-color: #f0f4f5;
+  height: auto;
+  padding-left: 16px;
+}
+
+.contact-form .form-control::placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+  opacity: 1;
+}
+
+.contact-form .form-control:-ms-input-placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+}
+
+.contact-form .form-control::-ms-input-placeholder {
+  color: #aeb4b9;
+  font-weight: 500;
+}
+
+.contact-form .form-control:focus {
+  border-color: #04803c;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.07), 0 0 8px #047e3b;
+}
+
+.contact-form .title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.contact-form .description {
+  color: #aeb4b9;
+  font-size: 14px;
+  text-align: center;
+}
+
+.contact-form .submit-button-wrapper {
+  text-align: center;
+}
+
+.contact-form .submit-button-wrapper input {
+  border: none;
+  border-radius: 4px;
+  background-color: #3d9259;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px 60px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.contact-form .submit-button-wrapper input:hover {
+  background-color: #00d30b;
+}
+</style>
+<div>
+  <div class="contact-form-wrapper d-flex justify-content-center">
+		<form action="" method="post" class="contact-form" novalidate>
+			{% csrf_token %}
+      <h5 class="title">Contact us</h5>
+      <div>
+				<input type="text" name="first_name" maxlength="100" class="form-control rounded border-white mb-3 form-input" id="name" placeholder="Name"required id="id_first_name">
+      </div>
+      <div>
+				<input type="text" name="last_name" maxlength="100" class="form-control rounded border-white mb-3 form-input" placeholder="Last Name" required required id="id_last_name">
+      </div>
+      <div>
+				<input type="email" name="user_email" maxlength="254" class="form-control rounded border-white mb-3 form-input" placeholder="Email" required required id="id_user_email">
+      </div>
+      <div>
+				<input type="text" name="contact_number" maxlength="10" class="form-control rounded border-white mb-3 form-input" placeholder="Contact" required id="id_contact_number">
+      </div>
+      <div class="submit-button-wrapper">
+        <input type="submit" value="Send">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

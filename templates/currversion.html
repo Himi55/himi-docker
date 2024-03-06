@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<center>
+<div class="container-xxl py-6">
+  <div class="container">
+      <div class="row g-5 align-items-center">
+				<h4 class="text-dark alert alert-secondary">Currency Converter</h4>
+				<form action="" type=file enctype="multipart/form-data" method="post" style="position: relative; top:10px">
+					{% csrf_token %}
+					{{ form.as_table}}
+					<br><br><br>
+					<input type="submit" class=" btn btn-primary" value="Convert">
+					</form>
+				<br><br><br><br>
+				<button type="button"class=" btn btn-default" style="width:300px; margin-left:450px; margin-top:22px;" >{{key}}</button>
+			</div>
+      </div>
+  </div>
+</div>
+</center>
+{% endblock content %}

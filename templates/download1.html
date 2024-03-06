@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Teko|Yanone+Kaffeesatz');
+
+#body {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  position: relative;
+  top: 200px;
+}
+h1, h3 {
+  font-family: Teko;
+  margin-bottom: 0;
+}
+#wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+.inner-wrapper {
+  text-align: center;
+  margin-right: 10px;
+}
+.cta, .cta-2 {
+  font-family: Yanone Kaffeesatz;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  padding: 15px 10px;
+  background-color: black;
+  border: 2px solid black;
+  text-transform: uppercase;
+}
+.cta a, .cta-2 a {
+  color: white;
+  text-decoration: none;
+}
+.cta:hover, .cta-2:hover {
+  background-color: white;
+} 
+.cta:hover a, .cta-2:hover {
+  color: black;
+  text-decoration: none;
+}
+</style>
+<center>
+  <div id="body">
+    <h1>Button To Click Converted File  </h1>
+    <h2> Time left: <span id="count"></span></h2>
+    <div id="wrapper">
+      <div class="inner-wrapper">
+        <div class="ct">
+          <a href="#"  class="btn btn-success"   id="btnCounter"
+          aria-disabled="true">
+           Download
+        </a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</center>
+<script>
+var spn = document.getElementById("count");
+var btn = document.getElementById("btnCounter");
+var reloaded =true;
+var count = 5;     
+var timer = null; 
+
+(function countDown()
+{
+  spn.textContent = count;
+  if(count !== 0)
+  {
+    timer = setTimeout(countDown, 1000);
+    count--; 
+  } 
+  else 
+  {
+    var a = document.getElementById('btnCounter');
+    {% if download1.converted_video %}
+    a.href = "{{download1.converted_video.url}}";
+    a.removeAttribute("aria-disabled");
+    {% endif %}
+  }
+}());
+</script>
+{% endblock content %}

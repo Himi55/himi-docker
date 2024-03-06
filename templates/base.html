@@ -1,0 +1,157 @@
+    <html lang="en">
+    {% load static %}
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency/Document/Coversion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin=" anonymous ">
+    </script>
+
+    
+    <link rel="stylesheet"type="text/css" href="{% static 'css/style.css' %}"/>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+    body  {
+        background-color: #395b99;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        }
+        .description {
+            left: 50%;
+            position: absolute;
+            top: 230%;
+            transform: translate(-50%, -55%);
+            text-align: center;
+            }
+        .description h1 {
+            color: hsl(100, 58%, 55%);
+        }
+        .description p {
+            color: rgb(8, 9, 43);
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
+        .mySlides {display:none;}
+        #band
+        {
+            background-color: white;
+            position: relative;
+            max-width: 1440px;
+            
+        }
+    </style>
+    </head>
+    <body>
+    <div class="container-xxl bg-white p-0">
+    <div class="container-xxl position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="m-0">PyConversion</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                <a href="{% url 'home' %}" class="nav-item nav-link ">Home</a>
+                <a href="{% url 'aboutus' %}" class="nav-item nav-link">About</a>
+                <a href="{% url 'create' %}" class="nav-item nav-link">Contact</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Conversion</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{% url 'currency' %}" class="dropdown-item">Currency Conversion</a>
+                            <a href="{% url 'docum:docversion' %}" class="dropdown-item">Document Conversion</a>
+                            <a href="{% url 'videocon' %}"  class="dropdown-item">Video conversion</a>
+                        </div>
+                </div>
+            </div>
+                <a href="" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Login</a>
+            </div>
+        </nav>
+    </div>
+    </div>
+    
+    {% block content %}
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class = "slider-w3">
+    <div class="w3-content w3-display-container">
+        <img class="mySlides" src="{% static "images/image2.jpg" %}" style="width:140% ;position: relative; right:20%;height:100vh">
+        <img class="mySlides" src="{% static "images/image3.jpg" %}" style="width:140% ;position: relative; right:20%;height:100vh">
+        <img class="mySlides" src="{% static "images/image4.jpeg" %}" style="width:140% ;position: relative; right:20%;height:100vh">
+      
+        <button class="w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+    </div>
+    <!-- The Band Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" id="band">
+    <h2 class="w3-wide">Conversion</h2>
+    <p class="w3-justify">
+        A conversion rate is the ratio between two currencies,
+        most commonly used in foreign exchange markets, which designates how much 
+        of one currency is needed to exchange for the equivalent value of 
+        another currency. Conversion rates fluctuate regularly for all currencies 
+        traded in forex markets. Forex spot prices are quoted continuously 
+        with one day's break over weekends.</p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p>Video Conversion</p>
+        <img src="{% static "images/image5.png" %}" class="w3-round w3-margin-bottom" alt="Random Name" style="width:90%;height:50vh">
+      </div>
+      <div class="w3-third">
+        <p>Currency Conversion</p>
+        <img src="{% static "images/image6.jpg" %}" class="w3-round w3-margin-bottom" alt="Random Name" style="width:90%;height:50vh">
+      </div>
+      <div class="w3-third">
+        <p>Document Conversion</p>
+        <img src="{% static "images/image7.jpeg" %}" class="w3-round" alt="Random Name" style="width:90%;height:50vh">
+      </div>
+    </div>
+  </div>
+  <footer class="w3-center w3-black w3-padding-64">
+    <div class="w3-xlarge w3-section">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by <a href="/" target="_blank" class="w3-hover-text-green">PyConversion</a></p>
+  </footer>
+      <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+        </script>
+    {% endblock content %}
+    </body>
+    </html>

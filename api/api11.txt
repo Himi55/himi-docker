@@ -1,0 +1,10 @@
+US Dollar	0.012943	77.263375
+Euro	0.012236	81.724414
+British Pound	0.010466	95.547086
+Australian Dollar	0.018545	53.921759
+Canadian Dollar	0.016822	59.444208
+Singapore Dollar	0.017966	55.661149
+Swiss Franc	0.012832	77.929625
+Malaysian Ringgit	0.056684	17.641596
+Japanese Yen	1.687278	0.592671
+Chinese Yuan Renminbi	0.086709	11.532858
