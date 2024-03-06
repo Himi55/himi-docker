@@ -11,7 +11,6 @@ class UserContactDetails(models.Model):
   def __str__(self):
     return self.first_name
 
-
 class UserRegisterModel(models.Model):
     full_name = models.CharField(max_length=255)
     your_email = models.EmailField(unique=True)
